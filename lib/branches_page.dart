@@ -94,6 +94,7 @@ class _BranchesPageState extends State<BranchesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color(0xff51267D),
         title: const Text("MaxWay Branches"),
       ),
       body: YandexMap(

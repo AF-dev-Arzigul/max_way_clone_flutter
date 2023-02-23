@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:max_way/models/max_way_model.dart';
 import 'package:max_way/my_custom_items/CustomImageItem.dart';
+import 'package:max_way/product_detail_page.dart';
 
 class ProductBlock extends StatelessWidget {
   final Category category;
@@ -15,7 +16,7 @@ class ProductBlock extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
-            Text(category.title.uz, style: const TextStyle(fontSize: 24)),
+            Text(category.title.uz, style: const TextStyle(fontSize: 22)),
           ],
         ),
       ),
@@ -28,9 +29,9 @@ class ProductBlock extends StatelessWidget {
             return GestureDetector(
               onTap: () {
                 print(category.products[index2].title.uz);
-                // Navigator.push(context, MaterialPageRoute(builder: (context) {
-                //   return const MyHomePage(); //o'rniga details screen ochilishi kerak
-                // }));
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return ProductDetailPage(product: category.products[index2]); //o'rniga details screen ochilishi kerak
+                }));
               },
               child: Card(
                   elevation: 5,
